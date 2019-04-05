@@ -16,7 +16,7 @@ public class reanudar {
        public static void Reanudar(String[] args, String archivo) {
        try {
            // Run the process
-           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/KivaNS-Final/" + "./terminal2.sh" + " " + archivo + ".LPR");
+           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/EliaNS/" + "./terminal2.sh" + " " + archivo + ".LPR");
            // Get the input stream
            InputStream is = p.getInputStream();
  

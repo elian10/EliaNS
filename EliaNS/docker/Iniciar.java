@@ -15,7 +15,7 @@ public class Iniciar {
     public static void inicio(String[] args, String archivo) {
        try {
            // Run the process
-           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/KivaNS-Final/" + "./terminal1.sh" + " " + archivo + ".LPR");
+           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/EliaNS/" + "./terminal1.sh" + " " + archivo + ".LPR");
            // Get the input stream
            InputStream is = p.getInputStream();
  

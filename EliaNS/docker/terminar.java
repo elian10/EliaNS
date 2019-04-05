@@ -16,7 +16,7 @@ public class terminar {
     public static void Terminar(String[] args) {
        try {
            // Run the process
-           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/KivaNS-Final/" + "./terminar.sh");
+           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/EliaNS/" + "./terminar.sh");
            // Get the input stream
            InputStream is = p.getInputStream();
  
