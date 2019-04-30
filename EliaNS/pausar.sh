@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "Pausando Simulacion..."
-
 docker stop $(docker ps -aq)
 
 let lineas=`wc -l $1 | cut -d " " -f1`  #obtengo cantidad de lineas
@@ -29,13 +27,15 @@ do   						#recorro hasta la ultima linea con paso 4
 	docker commit $nombre smb-$nombre
 	docker commit $nombre smtp-$nombre
 	docker commit $nombre vpn-$nombre
+	
 	var=0
 	aux=$((aux -= 5))	
 	
 done
 
+
 docker rm $(docker ps -aq)
 
-echo "fin"
+
 #para saber los nombres de los contenedores que estan corriendo
 # docker ps  --format "table {{.Names}}"

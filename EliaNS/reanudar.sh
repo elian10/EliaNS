@@ -45,19 +45,14 @@ function Iniciar(){
 	temp=$2	
 	size=${#temp}
 	
-	case "$temp" in 
-		servidor)
-			imagen="--privileged servidor:1.6";;
-		cliente)
-			imagen="--env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" cliente:1.6";;
-		cliente-cli)
-			imagen="cliente-cli:1.6";;
-		router)
-			imagen="router:1.6";;
-		*) echo "error"; exit;;
-	esac
-
-	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN $imagen bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN squid-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN dhcp-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN dns-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN fire-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN http-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN smb-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN smtp-$1 bash
+	docker run --detach --hostname $1 -it --name $1 --cap-add NET_ADMIN vpn-$1 bash
 	
 #	echo docker exec -t "$1" ip ro del default
 	docker exec -t "$1" ip ro del default

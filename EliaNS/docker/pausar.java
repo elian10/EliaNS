@@ -17,7 +17,7 @@ public class pausar {
     public static void Pausa(String[] args, String archivo) {
        try {
            // Run the process
-           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/EliaNS/" + "./pausar.sh" + " " + archivo + ".LPR");
+           Process p = Runtime.getRuntime().exec("/bin/sh " + "/root/EliaNS/" + "./terminal3.sh" + " " + archivo + ".LPR");
            // Get the input stream
            InputStream is = p.getInputStream();
  
